@@ -4,14 +4,14 @@
 class AirplaneGame
 {
 private:
-   /* data */
 public:
-   AirplaneGame(/* args */);
+   AirplaneGame();
    ~AirplaneGame();
    void run();
+   void menu();
 };
 
-AirplaneGame::AirplaneGame(/* args */)
+AirplaneGame::AirplaneGame()
 {
 }
 
@@ -19,10 +19,7 @@ AirplaneGame::~AirplaneGame()
 {
 }
 
-void AirplaneGame::run()
-{
 
-}
 
 
 

@@ -11,12 +11,17 @@ class menu
 private:
    string userSelectOption;
 public:
-   menu(/* args */);
+   menu();
    ~menu();
+   void printMenu();
+   int checkStringOption();
+   string getUserSelectionOption() const;
+   void setUserSelectionOption();
 };
 
-menu::menu(/* args */)
+menu::menu()
 {
+
 }
 
 menu::~menu()
