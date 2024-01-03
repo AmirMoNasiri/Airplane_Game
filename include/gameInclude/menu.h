@@ -20,6 +20,7 @@ public:
    void setUserSelection(char selection);
    int getUserSelection() const;
    void printMenu();
+   
 
 };
 

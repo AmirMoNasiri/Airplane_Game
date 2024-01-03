@@ -1,57 +1,82 @@
-#include "../include/gameInclude/menu.h"
+#include "include/gameInclude/AirplaneGame.h"
 
 
 
-bool menu :: correctSelection(char selection)
+bool AirplaneGame :: correctSelection(int selection)
 {
    switch (selection)
    {
-   case 'n':
-   case 'N':
-   case 'l':
-   case 'L':
-   case 's':
-   case 'S':
-   case 'e':
-   case 'E':
+   case NEWGAME:
+   case LOADGAME:
+   case SCORE:
+   case HELP:
+   case EXIT:
       return true;
       break;
    
    default:
       return false;
+      system("cls");
+      cout << " WRONG INPUT !!!" << endl;
+      system("PAUSE");
       // throw exetion false selection charater
       break;
    }
    
 }
-void menu :: setUserSelection(char selection)
+void AirplaneGame :: setUserSelection()
 {
-   char sel = ' ';
+   int selection = 1;
+   cout << " Enter : ";
+   cin >> selection;
    if (correctSelection)
    {
-      selectionMO_CHAR = selection;
-   } else
-   {
-      // throw exeption
+      selectionMenuOption = selection;
+      checkMenuInput();
    }
-   
 }
 
-int menu :: getUserSelection() const
+int AirplaneGame :: getUserSelection() const
 {
-   return selectionMO_INT;
+   return selectionMenuOption;
 }
 
-void menu :: printMenu()
+void AirplaneGame :: printMenu()
 {
    system("cls");
    cout << " Airplane Game" << endl;
    cout << "------------------------" << endl;
-   cout << " New Game ----> N" << endl;
-   cout << " Load Game ---> L" << endl;
-   cout << " Score -------> S" << endl;
-   cout << " Help --------> H" << endl;
-   cout << " Exit --------> E" << endl << endl;
+   cout << " 1 - New Game " << endl;
+   cout << " 2 - Load Game " << endl;
+   cout << " 3 - Score " << endl;
+   cout << " 4 - Help " << endl;
+   cout << " 0 - Exit " << endl << endl;
+}
 
-   cout << " Enter : ";
+void AirplaneGame :: checkMenuInput()
+{
+   switch (getUserSelection())
+   {
+   case NEWGAME:
+      break;
+
+   case LOADGAME:
+      break;
+
+   case SCORE:
+
+      break;
+
+   case HELP:
+      break;
+
+   case EXIT:
+      cout << " GoodBye " << endl;
+      exitFlag = false;
+      break;
+   
+   default:
+      // throw exetion false selection charater
+      break;
+   }
 }
