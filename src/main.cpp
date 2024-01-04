@@ -1,4 +1,11 @@
-#include "include/gameInclude/AirplaneGame.h"
+/*
+	Airplane Game - Advanced Programming Project
+
+		Amir Mohammad Nasiri - 40012358043
+*/
+
+
+#include "../include/gameInclude/AirplaneGame.h"
 using namespace std;
 
 int main()

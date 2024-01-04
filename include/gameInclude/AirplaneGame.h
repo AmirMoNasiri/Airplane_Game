@@ -6,19 +6,19 @@
 
 using namespace std;
 
-enum MenuStatus {EXIT, NEWGAME , LOADGAME, SCORE, HELP};
 
 class AirplaneGame
 {
 private:
+   enum MenuStatus {EXIT, NEWGAME , LOADGAME, SCORE, HELP};
    int  selectionMenuOption;  // selection Menu Option int
    bool exitFlag;
 public:
-   AirplaneGame();
-   ~AirplaneGame();
+   // AirplaneGame();
+   // ~AirplaneGame();
    void run();
    // menu functions
-   bool correctSelection(int selection);
+   bool correctSelection();
    void setUserSelection();
    int getUserSelection() const;
    void printMenu();

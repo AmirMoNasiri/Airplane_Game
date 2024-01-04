@@ -1,10 +1,13 @@
-#include "include/gameInclude/AirplaneGame.h"
+#include "../include/gameInclude/AirplaneGame.h"
+
+#include<iostream>
+#include <cstdlib>
+#include <unistd.h>
 
 
-
-bool AirplaneGame :: correctSelection(int selection)
+bool AirplaneGame :: correctSelection()
 {
-   switch (selection)
+   switch (selectionMenuOption)
    {
    case NEWGAME:
    case LOADGAME:
@@ -29,7 +32,7 @@ void AirplaneGame :: setUserSelection()
    int selection = 1;
    cout << " Enter : ";
    cin >> selection;
-   if (correctSelection)
+   if (correctSelection())
    {
       selectionMenuOption = selection;
       checkMenuInput();
@@ -71,7 +74,13 @@ void AirplaneGame :: checkMenuInput()
       break;
 
    case EXIT:
-      cout << " GoodBye " << endl;
+      cout << " GoodBye";
+      cout << "e";
+      sleep(1);   
+      cout << "e";
+      sleep(1);   
+      cout << "e";
+      sleep(1);
       exitFlag = false;
       break;
    

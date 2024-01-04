@@ -1,21 +1,24 @@
-#include "include/gameInclude/AirplaneGame.h"
+#include "../include/gameInclude/AirplaneGame.h"
 #include "../include/gameInclude/menu.h"
 
-#include <stdlib.h>
+#include<iostream>
+#include <cstdlib>
+#include <unistd.h>
 
 
-AirplaneGame::AirplaneGame() // default constructor
-{
-   selectionMenuOption  = 10;
-   exitFlag = true;
-}
-AirplaneGame::AirplaneGame() // parameter constructor
-{
-
-}
 void AirplaneGame::run() // run function
 {
-   cout << " WELCOME TO AIRPLANE GAME" << endl;
+   system("cls");
+   cout << " WELCOME TO AIRPLANE GAME ";
+
+   cout << ". ";
+   sleep(1);
+   cout << ". ";
+   sleep(1);
+   cout << ". ";
+   sleep(1);
+   cout.flush();
+   // system("pause");
    do
    {
       printMenu();
