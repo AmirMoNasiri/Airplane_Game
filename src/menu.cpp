@@ -104,9 +104,10 @@ void AirplaneGame :: exitMenu()
 void AirplaneGame :: helpMenu()
 {
    system ("cls");
-   cout << " HELP GAME" << endl;
+   cout << " HELP GAME"               << endl;
    cout << "------------------------" << endl;
-   cout << " W - Going UP" << endl;
-   cout << " S - Going DOWN" << endl;
-   cout << " M - Shooting" << endl;
+   cout << " W - Going UP"            << endl;
+   cout << " S - Going DOWN"          << endl;
+   cout << " M - Shooting"            << endl;
+   cout << " E - Exit Game to Menu"   << endl;
 }
