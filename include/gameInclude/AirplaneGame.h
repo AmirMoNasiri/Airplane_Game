@@ -25,10 +25,12 @@ public:
    // ~AirplaneGame();
    void run();
    void welcomeFirst();
+   void printDelayAnimation(char c);
+
 
 
    // menu functions
-   bool correctSelection();
+   bool correctSelection(int selection);
    int  getUserSelection() const;
    void setUserSelection();
    void printMenu();

@@ -20,16 +20,17 @@ void AirplaneGame :: welcomeFirst()
 {
    system("cls");
    cout << " WELCOME TO AIRPLANE GAME ";
-   cout << ". ";
-   sleep(1);
-   cout << ". ";
-   sleep(1);
-   cout << ". ";
-   sleep(1);
-   cout.flush();
-
+   printDelayAnimation('.');
    system("cls");
    cout.flush();
    system(" pause");
+}
+void AirplaneGame :: printDelayAnimation(char c)
+{
+   for (size_t i = 0; i < 3; i++)
+   {
+      cout << c << " ";
+      sleep(1);
+   }
 }
 

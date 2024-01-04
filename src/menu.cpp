@@ -1,9 +1,12 @@
 #include "../include/gameInclude/AirplaneGame.h"
+#include "../include/gameInclude/menu.h"
+
 
 #include<iostream>
 #include <cstdlib>
 #include <unistd.h>
 #include <stdexcept>
+
 
 bool AirplaneGame :: correctSelection(int selection)
 {
@@ -40,17 +43,13 @@ void AirplaneGame :: setUserSelection()
    catch(const invalid_argument &e)
    {
       cerr << e.what();
-      cout << "! ";
-      sleep(1);
-      cout << "! ";
-      sleep(1);
-      cout << "! ";
-      sleep(1);
+      printDelayAnimation('!');
       cout.flush();
       printMenu();
       setUserSelection();
    }
 }
+
 
 int AirplaneGame :: getUserSelection() const
 {
@@ -60,13 +59,13 @@ int AirplaneGame :: getUserSelection() const
 void AirplaneGame :: printMenu()
 {
    system("cls");
-   cout << " Airplane Game" << endl;
+   cout << " Airplane Game"           << endl;
    cout << "------------------------" << endl;
-   cout << " 1 - New Game " << endl;
-   cout << " 2 - Load Game " << endl;
-   cout << " 3 - Score " << endl;
-   cout << " 4 - Help " << endl;
-   cout << " 0 - Exit " << endl << endl;
+   cout << " 1 - New Game "           << endl;
+   cout << " 2 - Load Game "          << endl;
+   cout << " 3 - Score "              << endl;
+   cout << " 4 - Help "               << endl;
+   cout << " 0 - Exit "       << endl << endl;
    cout << " Enter : ";
 
 }
@@ -103,16 +102,13 @@ void AirplaneGame :: checkMenuInput()
       break;
    }
 }
+
 void AirplaneGame :: exitMenu()
 {
    system("cls");
    cout << " GoodBye ";
-   cout << ". ";
-   sleep(1);
-   cout << ". ";
-   sleep(1);
-   cout << ". ";
-   sleep(1);
+   printDelayAnimation('.');
+
    exitFlag = false;
 }
 
@@ -126,3 +122,5 @@ void AirplaneGame :: helpMenu()
    cout << " M - Shooting"            << endl;
    cout << " E - Exit Game to Menu"   << endl << endl;
 }
+
+
