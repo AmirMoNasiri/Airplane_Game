@@ -3,11 +3,11 @@
 #include<iostream>
 #include <cstdlib>
 #include <unistd.h>
+#include <stdexcept>
 
-
-bool AirplaneGame :: correctSelection()
+bool AirplaneGame :: correctSelection(int selection)
 {
-   switch (selectionMenuOption)
+   switch (selection)
    {
    case NEWGAME:
    case LOADGAME:
@@ -16,12 +16,10 @@ bool AirplaneGame :: correctSelection()
    case EXIT:
       return true;
       break;
-   
    default:
-      return false;
       system("cls");
-      cout << " WRONG INPUT !!!" << endl;
-      system("PAUSE");
+      throw invalid_argument(" WRONG INPUT ");
+      return false;
       // throw exetion false selection charater
       break;
    }
@@ -30,12 +28,27 @@ bool AirplaneGame :: correctSelection()
 void AirplaneGame :: setUserSelection()
 {
    int selection ;
-   cout << " Enter : ";
    cin >> selection;
-   if (correctSelection())
+   try
    {
-      selectionMenuOption = selection;
-      checkMenuInput();
+      if (correctSelection(selection))
+      {
+         selectionMenuOption = selection;
+         checkMenuInput();
+      }
+   }
+   catch(const invalid_argument &e)
+   {
+      cerr << e.what();
+      cout << "! ";
+      sleep(1);
+      cout << "! ";
+      sleep(1);
+      cout << "! ";
+      sleep(1);
+      cout.flush();
+      printMenu();
+      setUserSelection();
    }
 }
 
@@ -54,6 +67,8 @@ void AirplaneGame :: printMenu()
    cout << " 3 - Score " << endl;
    cout << " 4 - Help " << endl;
    cout << " 0 - Exit " << endl << endl;
+   cout << " Enter : ";
+
 }
 
 void AirplaneGame :: checkMenuInput()
@@ -109,5 +124,5 @@ void AirplaneGame :: helpMenu()
    cout << " W - Going UP"            << endl;
    cout << " S - Going DOWN"          << endl;
    cout << " M - Shooting"            << endl;
-   cout << " E - Exit Game to Menu"   << endl;
+   cout << " E - Exit Game to Menu"   << endl << endl;
 }
