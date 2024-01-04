@@ -1,7 +1,13 @@
 /*
-	Airplane Game - Advanced Programming Project
+		Airplane Game - Advanced Programming Project
 
-		Amir Mohammad Nasiri - 40012358043
+		
+			Amir Mohammad Nasiri - 40012358043
+		
+				Bu-Ali Sina University
+				Semester 4021
+				Fall 1402
+
 */
 
 
@@ -10,8 +16,8 @@ using namespace std;
 
 int main()
 {
-	AirplaneGame a;
-	a.run();
+	AirplaneGame game;
+	game.run();
 
 	return 0;
 }

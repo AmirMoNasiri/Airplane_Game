@@ -29,7 +29,7 @@ bool AirplaneGame :: correctSelection()
 }
 void AirplaneGame :: setUserSelection()
 {
-   int selection = 1;
+   int selection ;
    cout << " Enter : ";
    cin >> selection;
    if (correctSelection())
@@ -71,21 +71,42 @@ void AirplaneGame :: checkMenuInput()
       break;
 
    case HELP:
+      helpMenu();
+      system("pause");
+      printMenu();
+      setUserSelection();
+
       break;
 
    case EXIT:
-      cout << " GoodBye";
-      cout << "e";
-      sleep(1);   
-      cout << "e";
-      sleep(1);   
-      cout << "e";
-      sleep(1);
-      exitFlag = false;
+      exitMenu();
+
       break;
    
    default:
       // throw exetion false selection charater
       break;
    }
+}
+void AirplaneGame :: exitMenu()
+{
+   system("cls");
+   cout << " GoodBye ";
+   cout << ". ";
+   sleep(1);
+   cout << ". ";
+   sleep(1);
+   cout << ". ";
+   sleep(1);
+   exitFlag = false;
+}
+
+void AirplaneGame :: helpMenu()
+{
+   system ("cls");
+   cout << " HELP GAME" << endl;
+   cout << "------------------------" << endl;
+   cout << " W - Going UP" << endl;
+   cout << " S - Going DOWN" << endl;
+   cout << " M - Shooting" << endl;
 }

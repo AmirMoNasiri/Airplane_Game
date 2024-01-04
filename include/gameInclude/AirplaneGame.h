@@ -10,25 +10,36 @@ using namespace std;
 class AirplaneGame
 {
 private:
+   // enum type for selection of user in menu
    enum MenuStatus {EXIT, NEWGAME , LOADGAME, SCORE, HELP};
-   int  selectionMenuOption;  // selection Menu Option int
+
+   // selection Menu Option int
+   int  selectionMenuOption;
+
+   // when user selection Exit exitFlag = ture
    bool exitFlag;
+
+
 public:
    // AirplaneGame();
    // ~AirplaneGame();
    void run();
+   void welcomeFirst();
+
+
    // menu functions
    bool correctSelection();
+   int  getUserSelection() const;
    void setUserSelection();
-   int getUserSelection() const;
    void printMenu();
    void checkMenuInput();
-
    // new game
    // load game
    // score
    // help
-   // exit
+   void helpMenu();
+   void exitMenu();
+
 
 };
 

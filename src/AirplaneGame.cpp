@@ -8,9 +8,19 @@
 
 void AirplaneGame::run() // run function
 {
+   welcomeFirst();
+   do
+   {
+      printMenu();
+      setUserSelection();
+   } while (exitFlag);
+}
+
+   // show welcome when run game
+void AirplaneGame :: welcomeFirst()
+{
    system("cls");
    cout << " WELCOME TO AIRPLANE GAME ";
-
    cout << ". ";
    sleep(1);
    cout << ". ";
@@ -18,11 +28,9 @@ void AirplaneGame::run() // run function
    cout << ". ";
    sleep(1);
    cout.flush();
-   // system("pause");
-   do
-   {
-      printMenu();
-      setUserSelection();
-   } while (exitFlag);
-   
+
+   system("cls");
+   cout.flush();
+   system(" pause");
 }
+
