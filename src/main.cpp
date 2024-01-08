@@ -1,6 +1,10 @@
 /*
-    HelicopterProject
+    Helicopter Game - Advanced Programming
 
+        Bu-Ali Sina University 
+        Semester 4021 - 1402-1403
+
+        AmirMohammad Nasiri - 40012358043
 */
 
 
