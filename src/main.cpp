@@ -1,11 +1,16 @@
-#include"include/map.hpp"
+/*
+    HelicopterProject
+
+*/
+
+
+#include"../include/map.hpp"
 
 using namespace std;
 
 int main()
 {
     Map map ;
-    
     ifstream myFile("helicopter.txt");
 
     if (myFile.is_open())
@@ -27,7 +32,7 @@ int main()
 
                 else
                     map.myHelicopter.point = tempNumber;
-            }      
+            }
 
         int size ;
         myFile >> size ;
